@@ -1,0 +1,7 @@
+#include<stdio.h>
+int main()
+{
+	int a;
+	printf("enter numbers from 1 to 10");
+	scanf("%d",&a);
+}
