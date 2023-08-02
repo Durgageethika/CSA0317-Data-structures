@@ -1,0 +1,38 @@
+#include<stdio.h>
+#include<stdlib.h>
+int n, top=-1, *stack;
+void push(int x){
+	if(top==n) return;
+	stack[++top]=x;
+}
+int pop(){
+	if(top==-1) return-1;
+	return stack[top--];
+}
+int peek(){
+	if(top==-1) return-1;
+	return stack[top];
+}
+void display(){
+	for(int i=top;i>-1;i--)
+	printf("%d",stack[i]);
+	printf("\n\n");
+}
+int main(){
+	n=5;
+	printf("size of the stack is 5\n\n");
+	stack = (int*)malloc(n*sizeof(int));
+	printf("push elements into the stack\n");
+	push(5);
+	push(7);
+	push(9);
+	printf("display the elements of the stack ");
+	display();
+	printf("top of the stack=%d\n\n",peek());
+	printf("pop the top of the stack %d \n",pop());
+	printf("pop the top of the stack %d \n",pop());
+	printf("display the elements");
+	display();
+	return 0;
+	
+}
